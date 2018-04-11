@@ -57,7 +57,19 @@ public class Main {
      * @param hi the index of the last element in the range + 1.
      */
     public static void sort(ArrayList<Integer> arrayList, int lo, int hi) {
-        throw new UnsupportedOperationException("sort() has not been implemented yet");
+        if((arrayList.size() != 1) && (arrayList.size() != 0))
+        {
+            ArrayList<Integer> half1 = new ArrayList<>();
+            ArrayList<Integer> half2 = new ArrayList<>();
+            for(int i = lo; i < hi; i++)
+            {
+                if(i <= (arrayList.size())/2)
+                {
+
+                }
+            }
+        }
+
     }
 
     /**
