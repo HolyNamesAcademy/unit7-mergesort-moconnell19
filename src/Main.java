@@ -57,17 +57,22 @@ public class Main {
      * @param hi the index of the last element in the range + 1.
      */
     public static void sort(ArrayList<Integer> arrayList, int lo, int hi) {
-        if((arrayList.size() != 1) && (arrayList.size() != 0))
+        if(arrayList.size() > 1)
         {
-            ArrayList<Integer> half1 = new ArrayList<>();
-            ArrayList<Integer> half2 = new ArrayList<>();
-            for(int i = lo; i < hi; i++)
+            ArrayList<Integer> range1 = new ArrayList<>();
+            ArrayList<Integer> range2 = new ArrayList<>();
+            for(int i = 0; i < arrayList.size(); i++)
             {
-                if(i <= (arrayList.size())/2)
-                {
-
-                }
+               if(i <= arrayList.size()/2)
+               {
+                   range1.add(i);
+               }
+               else if(i > arrayList.size()/2)
+               {
+                   range2.add(i);
+               }
             }
+
         }
 
     }
