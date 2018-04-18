@@ -56,24 +56,16 @@ public class Main {
      * @param lo the index of the first element in the range
      * @param hi the index of the last element in the range + 1.
      */
-    public static void sort(ArrayList<Integer> arrayList, int lo, int hi) {
-        if(arrayList.size() > 1)
+    public static void sort(ArrayList<Integer> arrayList, int lo, int hi)
+    {
+        if(hi - lo <= 1)
         {
-            ArrayList<Integer> range1 = new ArrayList<>();
-            ArrayList<Integer> range2 = new ArrayList<>();
-            for(int i = 0; i < arrayList.size(); i++)
-            {
-               if(i <= arrayList.size()/2)
-               {
-                   range1.add(i);
-               }
-               else if(i > arrayList.size()/2)
-               {
-                   range2.add(i);
-               }
-            }
-
+            return;
         }
+            int mid = (hi + lo)/2;
+        sort(arrayList, lo, mid);
+        sort(arrayList, mid, hi);
+        merge(arrayList, lo, mid, hi);
 
     }
 
@@ -88,6 +80,31 @@ public class Main {
      * @param hi the index of the last element in the second range + 1.
      */
     public static void merge(ArrayList<Integer> arrayList, int lo, int mid, int hi) {
-        throw new UnsupportedOperationException("merge() has not been implemented yet");
+        ArrayList<Integer> tempArray = new ArrayList<>();
+        int i = lo;
+        int j = mid;
+        while(i < mid || j < hi)
+        {
+            if(j == hi)
+            {
+                tempArray.add(arrayList.get(i));
+                i++;
+            }
+            else if(i == mid)
+            {
+                tempArray.add(arrayList.get(j));
+                j++;
+            }
+            if(arrayList.get(j) < arrayList.get(i))
+            {
+                tempArray.add(arrayList.get(j));
+                j++;
+            }
+            else
+            {
+                tempArray.add(arrayList.get(i));
+                i++;
+            }
+        }
     }
 }
