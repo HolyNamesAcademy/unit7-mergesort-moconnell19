@@ -95,7 +95,7 @@ public class Main {
                 tempArray.add(arrayList.get(j));
                 j++;
             }
-            if(arrayList.get(j) < arrayList.get(i))
+            else if(arrayList.get(j) < arrayList.get(i))
             {
                 tempArray.add(arrayList.get(j));
                 j++;
@@ -104,6 +104,10 @@ public class Main {
             {
                 tempArray.add(arrayList.get(i));
                 i++;
+            }
+            for(int index2 = 0; index2 < tempArray.size(); index2++)
+            {
+                arrayList.set(index2 + lo, tempArray.get(index2));
             }
         }
     }
